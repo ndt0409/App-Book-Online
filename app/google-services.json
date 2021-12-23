@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218441890238",
+    "project_id": "appbookonline-bca51",
+    "storage_bucket": "appbookonline-bca51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218441890238:android:2b32af5a32393ca02be1ef",
+        "android_client_info": {
+          "package_name": "com.ndt.bookonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218441890238-rea7o0j3abhrtovtbh4n748fac4gllb9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDROYXa6sPNJYx5SfJRUpSoRe8dLTQ6Ydk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218441890238-rea7o0j3abhrtovtbh4n748fac4gllb9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

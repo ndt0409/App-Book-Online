@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--do mau trong suot-->
+    <solid android:color="@android:color/transparent"/>
+
+    <!--bo tron-->
+    <corners android:radius="10dp"/>
+
+    <!--tao vien-->
+    <stroke android:color="@color/purple_500"
+        android:width="1dp"/>
+
+</shape>
