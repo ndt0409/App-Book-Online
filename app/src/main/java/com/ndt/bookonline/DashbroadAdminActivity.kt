@@ -59,6 +59,10 @@ class DashbroadAdminActivity : AppCompatActivity() {
         binding.btnAddCategory.setOnClickListener {
             startActivity(Intent(this, CategoryAddActivity::class.java))
         }
+
+        binding.addPDF.setOnClickListener {
+            startActivity(Intent(this, AddPdfActivity::class.java))
+        }
     }
 
     private fun loadCategory() {
