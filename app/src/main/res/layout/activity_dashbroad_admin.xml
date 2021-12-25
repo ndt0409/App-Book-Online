@@ -16,29 +16,63 @@
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
             android:text="Dashbroad Admin"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tvSubTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/tvTitle"
-            android:text="abc@gmail.com"
-            />
+            android:layout_centerHorizontal="true"
+            android:text="abc@gmail.com" />
+
         <ImageButton
             android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
             android:background="@android:color/transparent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_logout_white"/>
+            android:src="@drawable/ic_logout_white" />
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <!--add category-->
+        <Button
+            android:id="@+id/btnAddCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_button1"
+            android:minHeight="50dp"
+            android:text="+ Thêm loại sách"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <!--Add PDF-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addPDF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_image_pdf"
+            android:tint="@color/white"
+            app:fabCustomSize="50dp"
+            android:backgroundTint="@color/purple_500"/>
+    </LinearLayout>
 
 </RelativeLayout>

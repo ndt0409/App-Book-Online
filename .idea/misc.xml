@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/ic_category_white.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/shape_button1.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/shape_button2.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/shape_edittext01.xml" value="0.14074074074074075" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/shape_toolbar01.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/shape_toolbar02.xml" value="0.2203125" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/layout/activity_category_add.xml" value="0.2" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/layout/activity_dashbroad_admin.xml" value="0.16893115942028986" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/layout/activity_dashbroad_user.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/layout/activity_login.xml" value="0.16" />

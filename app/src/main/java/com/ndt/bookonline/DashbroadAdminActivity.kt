@@ -27,6 +27,9 @@ class DashbroadAdminActivity : AppCompatActivity() {
             firebaseAuth.signOut()
             checkUser()
         }
+        binding.btnAddCategory.setOnClickListener {
+            startActivity(Intent(this, CategoryAddActivity::class.java))
+        }
     }
 
     private fun checkUser() {
