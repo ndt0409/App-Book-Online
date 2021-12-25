@@ -40,7 +40,6 @@
             android:textColor="@color/white"
             android:textSize="28sp" />
     </RelativeLayout>
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/titleCategory"
         android:layout_width="match_parent"
