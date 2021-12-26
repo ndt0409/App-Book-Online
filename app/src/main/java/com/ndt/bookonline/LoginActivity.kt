@@ -53,9 +53,9 @@ class LoginActivity : AppCompatActivity() {
         password = binding.edtPass.text.toString().trim()
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, "Invalid email format...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Vui lòng nhập đúng định dạng email", Toast.LENGTH_SHORT).show()
         } else if (password.isEmpty()) {
-            Toast.makeText(this, "Enter Password...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show()
         } else {
             loginUser()
         }
@@ -65,21 +65,21 @@ class LoginActivity : AppCompatActivity() {
         //login - firebase auth
 
         //load
-        progressDialog.setMessage("Creating Account...")
+        progressDialog.setMessage("Thiết lập tài khoản...")
         progressDialog.show()
         //tao user trong firebase auth
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
             checkUser()
-        }.addOnFailureListener { e ->
+        }.addOnFailureListener {
             progressDialog.dismiss()
-            Toast.makeText(this, "Failed create account due to ${e.message}", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Đăng nhập thất bại, vui lòng kiểm tra lại đường truyền", Toast.LENGTH_SHORT)
                 .show()
         }
     }
 
     private fun checkUser() {
         //neu la ad chuyen dashbroad ad va ngc lai la user
-        progressDialog.setMessage("Checking user...")
+        progressDialog.setMessage("Checking...")
 
         val firebaseUser = firebaseAuth.currentUser!!
 

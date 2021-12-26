@@ -37,7 +37,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Create new account"
+            android:text="Tạo tài khoản"
             android:textColor="@color/white"
             android:textSize="28sp" />
     </RelativeLayout>
@@ -148,7 +148,7 @@
                 android:layout_below="@id/titleConfirmPass"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_button1"
-                android:text="Register"
+                android:text="Đăng ký"
                 android:textColor="@color/white" />
         </RelativeLayout>
 

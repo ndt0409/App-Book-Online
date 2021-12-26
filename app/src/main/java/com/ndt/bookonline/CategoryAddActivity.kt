@@ -22,7 +22,7 @@ class CategoryAddActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please wait...")
+        progressDialog.setTitle("Vui lòng chờ...")
         progressDialog.setCanceledOnTouchOutside(false)
 
         binding.btnBack.setOnClickListener {
@@ -62,6 +62,7 @@ class CategoryAddActivity : AppCompatActivity() {
 
         val ref = FirebaseDatabase.getInstance().getReference("Categories")
         ref.child("$timestamp").setValue(hashMap).addOnSuccessListener {
+            progressDialog.dismiss()
             Toast.makeText(this, "Thêm thành công ", Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {
             progressDialog.dismiss()

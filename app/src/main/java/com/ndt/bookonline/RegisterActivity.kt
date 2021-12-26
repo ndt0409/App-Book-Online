@@ -29,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //thanh load
         progressDialog = ProgressDialog(this)
-        progressDialog.setTitle("Please wait")
+        progressDialog.setTitle("Vui lòng chờ...")
         progressDialog.setCanceledOnTouchOutside(false)
 
         //xu ly nut back, quay ve man hinh chinh
@@ -57,15 +57,15 @@ class RegisterActivity : AppCompatActivity() {
         //validate data
         if (name.isEmpty()) {
             //empty name
-            Toast.makeText(this, "Enter your name...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Vui lòng nhập tên", Toast.LENGTH_SHORT).show()
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(this, "Invalid email pattern...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Vui lòng nhập đúng định dạng email", Toast.LENGTH_SHORT).show()
         } else if (password.isEmpty()) {
-            Toast.makeText(this, "Enter Pasword...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Vui lòng nhập mật khẩu", Toast.LENGTH_SHORT).show()
         } else if (cPassword.isEmpty()) {
-            Toast.makeText(this, "Confirm Pasword...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Vui lòng nhập lại mật khẩu", Toast.LENGTH_SHORT).show()
         } else if (password != cPassword) {
-            Toast.makeText(this, "sai cmm pass nhap lai..", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Mật khẩu không giống nhau, nhập lại", Toast.LENGTH_SHORT).show()
         } else {
             createUserAccount()
         }
@@ -73,23 +73,23 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun createUserAccount() {
         //tao tai khoan - firebase auth
-        progressDialog.setMessage("Creating Account...")
+        progressDialog.setMessage("Tạo tài khoản mới...")
         progressDialog.show()
         //tao user trong firebase auth
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener {
             updateUserInfor()
-        }.addOnFailureListener { e ->
+        }.addOnFailureListener {
             progressDialog.dismiss()
-            Toast.makeText(this, "Failed create account due to ${e.message}", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Thất bại, vui lòng kiểm tra lại đường truyền", Toast.LENGTH_SHORT)
                 .show()
         }
     }
 
     private fun updateUserInfor() {
         //luu thong tin ng dung realtime - firebase realtime
-        progressDialog.setMessage("Saving user info...")
-//timestamp
-        val timestamp = System.currentTimeMillis()
+        progressDialog.setMessage("Lưu thông tin tài khoản")
+        //timestamp
+        val timestamp = System.currentTimeMillis() //khoảng thời gian tính đến mili s
         //lấy uid người dùng hiện tại vì người dùng đã được đăng ký để có thể lấy ngay
         val uid = firebaseAuth.uid
 
@@ -100,18 +100,18 @@ class RegisterActivity : AppCompatActivity() {
         hashMap["name"] = name
         hashMap["profileImage"] = ""
         hashMap["userType"] = "user" //admin hoac user
-        hashMap["timestamp"] = timestamp //admin hoac user
+        hashMap["timestamp"] = timestamp
 
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         ref.child(uid).setValue(hashMap).addOnSuccessListener {
             progressDialog.dismiss()
-            Toast.makeText(this, "Account created ...", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Tạo tài khoản..", Toast.LENGTH_SHORT)
                 .show()
             startActivity(Intent(this@RegisterActivity, DashbroadUserActivity::class.java))
             finish()
-        }.addOnFailureListener { e ->
+        }.addOnFailureListener {
             progressDialog.dismiss()
-            Toast.makeText(this, "Failed saving user info due to ${e.message}", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Thất bại", Toast.LENGTH_SHORT)
                 .show()
         }
     }

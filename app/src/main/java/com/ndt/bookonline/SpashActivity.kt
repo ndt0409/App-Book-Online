@@ -27,12 +27,13 @@ class SpashActivity : AppCompatActivity() {
             }, 2000
         )
     }
-    private fun checkUser(){
+
+    private fun checkUser() {
         val firebaseUser = firebaseAuth.currentUser
-        if (firebaseUser == null){
+        if (firebaseUser == null) {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }else{
+        } else {
             val firebaseUser = firebaseAuth.currentUser!!
 
             val ref = FirebaseDatabase.getInstance().getReference("Users")
@@ -44,14 +45,18 @@ class SpashActivity : AppCompatActivity() {
                     if (userType == "user") {
                         startActivity(Intent(this@SpashActivity, DashbroadUserActivity::class.java))
                         finish()
-                    } else if (userType == "admin"){
-                        startActivity(Intent(this@SpashActivity, DashbroadAdminActivity::class.java))
+                    } else if (userType == "admin") {
+                        startActivity(
+                            Intent(
+                                this@SpashActivity,
+                                DashbroadAdminActivity::class.java
+                            )
+                        )
                         finish()
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
-
                 }
             })
         }

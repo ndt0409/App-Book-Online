@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvTitle"
             android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
             android:text="abc@gmail.com" />
 
         <ImageButton
@@ -96,7 +97,7 @@
             android:id="@+id/addPDF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/purple_500"
+            android:backgroundTint="@color/black"
             android:src="@drawable/ic_image_pdf"
             android:tint="@color/white"
             app:fabCustomSize="50dp" />

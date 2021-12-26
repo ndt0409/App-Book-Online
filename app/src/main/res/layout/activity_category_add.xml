@@ -71,5 +71,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/shape_button1"
+        android:textColor="@color/white"
         android:text="Thêm" />
 </RelativeLayout>

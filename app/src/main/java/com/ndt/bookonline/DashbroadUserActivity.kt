@@ -33,7 +33,7 @@ class DashbroadUserActivity : AppCompatActivity() {
         // get user current
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser == null) {
-            binding.tvSubTitle.text = "Not logged in"
+            binding.tvSubTitle.text = "Chưa đăng nhập"
         } else {
             val email = firebaseUser.email
             //set to tv of toolbar

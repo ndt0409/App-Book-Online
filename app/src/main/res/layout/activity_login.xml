@@ -27,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="Please Login"
+            android:text="Đăng nhập"
             android:textColor="@color/white"
             android:textSize="28sp" />
     </RelativeLayout>
@@ -106,7 +106,7 @@
                 android:layout_below="@id/tvForgot"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_button1"
-                android:text="login"
+                android:text="Đăng nhập"
                 android:textColor="@color/white" />
         </RelativeLayout>
     </ScrollView>
@@ -119,7 +119,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
-        android:text="Not have account? Sign up"
+        android:text="Bạn không có tài khoản? Đăng ký"
         />
 
 </RelativeLayout>
