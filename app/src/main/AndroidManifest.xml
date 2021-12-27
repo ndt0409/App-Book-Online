@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookOnline">
         <activity
+            android:name=".EditPdfActivity"
+            android:exported="false" />
+        <activity
             android:name=".ListPDFAdmin"
             android:exported="false" />
         <activity

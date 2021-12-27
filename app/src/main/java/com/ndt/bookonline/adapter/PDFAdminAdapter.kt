@@ -1,12 +1,15 @@
 package com.ndt.bookonline.adapter
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.ndt.bookonline.EditPdfActivity
 import com.ndt.bookonline.FilterCategory
 import com.ndt.bookonline.FilterPdfAdmin
 import com.ndt.bookonline.MyApplication
@@ -21,7 +24,7 @@ class PDFAdminAdapter : RecyclerView.Adapter<PDFAdminAdapter.HolderPdfAdmin>, Fi
 
     private var filterList: ArrayList<PDF>
 
-    var filter: FilterPdfAdmin? = null
+    private var filter: FilterPdfAdmin? = null
 
     private lateinit var binding: ItemPdfAdminBinding
 
@@ -67,6 +70,38 @@ class PDFAdminAdapter : RecyclerView.Adapter<PDFAdminAdapter.HolderPdfAdmin>, Fi
 
         //load pdf size
         MyApplication.loadPdfSize(pdfUrl, title, holder.tvSize)
+
+        //show edit, delete
+        holder.btnMore.setOnClickListener {
+            moreOptionDialog(model, holder)
+        }
+    }
+
+    private fun moreOptionDialog(model: PDF, holder: PDFAdminAdapter.HolderPdfAdmin) {
+        //get id, url, title cua sach
+        val bookId = model.id
+        val bookUrl = model.url
+        val bookTitle = model.title
+
+        //show dialog
+        val options = arrayOf("Edit", "Delete")
+
+        //thong bao
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Choose Option")
+            .setItems(options) { dialog, position ->
+                //xu ly khi click item
+                if (position == 0) {
+                    val intent = Intent(context, EditPdfActivity::class.java)
+                    intent.putExtra("bookId", bookId)
+                    context.startActivity(intent)
+                } else if (position == 1) {
+
+                    //show thong tin dialog can
+                    MyApplication.deleteBook(context, bookId, bookUrl, bookTitle)
+                }
+
+            }.show()
     }
 
     override fun getItemCount(): Int = pdfArrayList.size
