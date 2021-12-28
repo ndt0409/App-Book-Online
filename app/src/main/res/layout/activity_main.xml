@@ -23,18 +23,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="Chào mừng đến với thư viện sách NDT"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/btnSkip"
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_button1"
         android:text="Đăng nhập"
-        android:layout_above="@id/btnSkip"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/btnSkip"
@@ -44,6 +44,6 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_button2"
         android:text="Tiếp tục không cần đăng nhập"
-        android:textColor="@color/black" />
+        android:textColor="@color/white" />
 
 </RelativeLayout>

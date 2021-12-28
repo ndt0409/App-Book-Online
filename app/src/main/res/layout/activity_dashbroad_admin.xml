@@ -90,16 +90,16 @@
             android:minHeight="50dp"
             android:text="+ Thêm loại sách"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/black" />
 
         <!--Add PDF-->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addPDF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="@color/white"
             android:src="@drawable/ic_image_pdf"
-            android:tint="@color/white"
+            android:tint="@color/black"
             app:fabCustomSize="50dp" />
     </LinearLayout>
 

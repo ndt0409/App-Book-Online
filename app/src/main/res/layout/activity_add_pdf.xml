@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back01"
     tools:context=".AddPdfActivity">
 
     <RelativeLayout
         android:id="@+id/rlToolbar"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/shape_toolbar01">
+        android:layout_height="250dp">
 
         <ImageButton
             android:id="@+id/btnBack"
@@ -133,6 +133,6 @@
         android:layout_marginEnd="30dp"
         android:background="@drawable/shape_button1"
         android:text="Upload"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
 </RelativeLayout>

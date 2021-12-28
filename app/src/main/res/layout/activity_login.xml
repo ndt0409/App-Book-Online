@@ -9,8 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/shape_toolbar01">
+        android:layout_height="250dp">
 
         <ImageView
             android:id="@+id/tvIcon"
@@ -97,7 +96,19 @@
                 android:layout_marginTop="5dp"
                 android:padding="5dp"
                 android:text="Forgot Password?"
-                android:textColor="#c5c5c5" />
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titlePass"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:buttonTint="@color/white"
+                android:text="remember me"
+                android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/btnLogin"
@@ -107,18 +118,20 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_button1"
                 android:text="Đăng nhập"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </RelativeLayout>
     </ScrollView>
 
-<!--    khong co tai khoan thi dang ky di -->
+    <!--    khong co tai khoan thi dang ky di -->
     <TextView
         android:id="@+id/tvNoAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
         android:padding="10dp"
+        android:layout_marginBottom="30dp"
         android:text="Bạn không có tài khoản? Đăng ký"
         />
 

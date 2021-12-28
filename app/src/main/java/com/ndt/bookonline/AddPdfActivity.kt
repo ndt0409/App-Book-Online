@@ -129,7 +129,7 @@ class AddPdfActivity : AppCompatActivity() {
             val hashMap: HashMap<String, Any> = HashMap()
             hashMap["uid"] = "$uid"
             hashMap["id"] = "$timestamp"
-            hashMap["uid"] = "$title"
+            hashMap["title"] = "$title"
             hashMap["description"] = "$description"
             hashMap["categoryId"] = "$selectedCategoryId"
             hashMap["url"] = "$uploadedPdfUrl"

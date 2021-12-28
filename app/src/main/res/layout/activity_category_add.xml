@@ -9,8 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/shape_toolbar01">
+        android:layout_height="250dp">
 
         <ImageButton
             android:id="@+id/btnBack"
@@ -71,6 +70,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/shape_button1"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:text="Thêm" />
 </RelativeLayout>

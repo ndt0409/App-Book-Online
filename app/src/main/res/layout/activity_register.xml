@@ -10,8 +10,7 @@
     <RelativeLayout
         android:id="@+id/rlToolbar"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/shape_toolbar01">
+        android:layout_height="250dp">
 
         <ImageButton
             android:id="@+id/btnBack"
@@ -134,8 +133,8 @@
                     android:background="@drawable/shape_edittext01"
                     android:drawableStart="@drawable/ic_lock_gray"
                     android:drawablePadding="10dp"
-                    android:inputType="textPassword"
                     android:hint="Confirm password"
+                    android:inputType="textPassword"
                     android:padding="10dp"
                     android:textColor="@color/black"
                     android:textColorHint="#c5c5c5" />
@@ -149,7 +148,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/shape_button1"
                 android:text="Đăng ký"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
         </RelativeLayout>
 
     </ScrollView>

@@ -9,7 +9,7 @@
     <corners android:radius="10dp"/>
 
     <!--tao vien-->
-    <stroke android:color="@color/black"
+    <stroke android:color="@color/white"
         android:width="1dp"/>
 
 </shape>
