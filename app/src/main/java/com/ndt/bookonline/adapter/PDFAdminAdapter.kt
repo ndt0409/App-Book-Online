@@ -9,10 +9,7 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.ndt.bookonline.EditPdfActivity
-import com.ndt.bookonline.FilterCategory
-import com.ndt.bookonline.FilterPdfAdmin
-import com.ndt.bookonline.MyApplication
+import com.ndt.bookonline.*
 import com.ndt.bookonline.databinding.ItemPdfAdminBinding
 import com.ndt.bookonline.model.PDF
 
@@ -20,7 +17,7 @@ class PDFAdminAdapter : RecyclerView.Adapter<PDFAdminAdapter.HolderPdfAdmin>, Fi
 
     private var context: Context
 
-    public var pdfArrayList: ArrayList<PDF>
+    var pdfArrayList: ArrayList<PDF>
 
     private var filterList: ArrayList<PDF>
 
@@ -75,6 +72,13 @@ class PDFAdminAdapter : RecyclerView.Adapter<PDFAdminAdapter.HolderPdfAdmin>, Fi
         holder.btnMore.setOnClickListener {
             moreOptionDialog(model, holder)
         }
+        //click item mo man hinh detail book
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, DetailPdfActivity::class.java)
+            intent.putExtra("bookId", pdfId)
+            context.startActivity(intent)
+        }
+
     }
 
     private fun moreOptionDialog(model: PDF, holder: PDFAdminAdapter.HolderPdfAdmin) {

@@ -39,6 +39,10 @@ class ListPDFAdmin : AppCompatActivity() {
         //load pdf category
         loadPdfList()
 
+        binding.btnBack.setOnClickListener {
+            onBackPressed()
+        }
+
         //search
         binding.edtSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

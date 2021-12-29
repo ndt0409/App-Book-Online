@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookOnline">
         <activity
+            android:name=".ViewPdfActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailPdfActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditPdfActivity"
             android:exported="false" />
         <activity

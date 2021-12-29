@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storageMetadata
 import java.util.*
+import kotlin.collections.HashMap
 
 class MyApplication : Application() {
     override fun onCreate() {
@@ -115,18 +116,49 @@ class MyApplication : Application() {
                     ref.child(bookId)
                         .removeValue()
                         .addOnSuccessListener {
-                            Toast.makeText(context, "Delete successfully", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Delete successfully", Toast.LENGTH_SHORT)
+                                .show()
 
                         }
-                        .addOnFailureListener{
+                        .addOnFailureListener {
                             progressDialog.dismiss()
                             Toast.makeText(context, "Failed db", Toast.LENGTH_SHORT).show()
                         }
-                }.addOnFailureListener{
+                }.addOnFailureListener {
                     progressDialog.dismiss()
                     Toast.makeText(context, "Failed storage", Toast.LENGTH_SHORT).show()
                 }
 
+        }
+
+        fun incrementBookViewCount(bookId: String) {
+            //get current book views count
+            val ref = FirebaseDatabase.getInstance().getReference("Books")
+            ref.child(bookId)
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        //get luot xem
+                        var viewCount = "${snapshot.child("viewsCount").value}"
+
+                        if (viewCount == "" || viewCount == "null") {
+                            viewCount = "0"
+                        }
+                        //tang view
+                        val newViewCount = viewCount.toLong() + 1
+
+                        //setup data va update trong db
+                        val hashMap = HashMap<String, Any>()
+                        hashMap["viewsCount"] = newViewCount
+
+                        val dbRef = FirebaseDatabase.getInstance().getReference("Books")
+                        dbRef.child(bookId)
+                            .updateChildren(hashMap)
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+
+                    }
+                })
         }
     }
 }

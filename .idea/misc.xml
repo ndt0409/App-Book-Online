@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_detail_pdf.xml" value="0.22" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_list_pdfadmin.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_main.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_view_pdf.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/ic_category_white.xml" value="0.2169230769230769" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/ic_more.xml" value="0.2046875" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/BookOnline/app/src/main/res/drawable/shape_button03.xml" value="0.2169230769230769" />
