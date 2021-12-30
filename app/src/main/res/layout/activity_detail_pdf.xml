@@ -228,15 +228,26 @@
         android:layout_alignParentBottom="true"
         android:background="@color/black"
         android:orientation="horizontal">
+
         <Button
             android:id="@+id/btnReadBook"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Read"
-            android:background="@android:color/transparent"
             android:layout_weight="1"
-            android:textColor="@color/white"
-            android:drawableTop="@drawable/ic_read_book"/>
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/ic_read_book"
+            android:text="Read"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnDowloadBook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/ic_dowload"
+            android:text="Dowload"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 </RelativeLayout>
