@@ -114,7 +114,7 @@ class DetailPdfActivity : AppCompatActivity() {
             out.write(bytes)
             out.close()
 
-            Toast.makeText(this, "Da luu vao folder download", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Đã lưu vào folder download", Toast.LENGTH_SHORT)
                 .show()
             progressDialog.dismiss()
             incrementDownloadCount()

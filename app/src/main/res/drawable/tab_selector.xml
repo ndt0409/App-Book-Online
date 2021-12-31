@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--thay doi background khi chuyen tab-->
+    <item android:drawable="@drawable/bg_tab_selected" android:state_selected="true"/>
+    <item android:drawable="@drawable/bg_tab_unselected"/>
+
+</selector>
