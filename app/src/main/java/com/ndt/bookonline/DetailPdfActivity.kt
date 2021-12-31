@@ -68,6 +68,7 @@ class DetailPdfActivity : AppCompatActivity() {
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
                 Log.d("ndt", "permission granted")
+                dowloadBook()
             } else {
                 Log.d("ndt", "permission denied")
                 requestStorePermissonLaucher.launch(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -140,7 +141,7 @@ class DetailPdfActivity : AppCompatActivity() {
 
                     //lay du lieu tu db
                     val hashMap: HashMap<String, Any> = HashMap()
-                    hashMap["dowloadsCount"]
+                    hashMap["dowloadsCount"] = newDownloadsCount
 
                     //update len db
                     val dbRef = FirebaseDatabase.getInstance().getReference("Books")

@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/back01"
     android:layout_height="match_parent"
+    android:background="@drawable/back01"
     tools:context=".EditPdfActivity">
 
     <RelativeLayout
@@ -99,6 +99,7 @@
                     android:textSize="16sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
             <TextView
                 android:id="@+id/tvCategory"
                 android:layout_width="match_parent"
@@ -113,8 +114,8 @@
                 android:drawablePadding="10dp"
                 android:gravity="center_vertical"
                 android:hint="Loại sách"
-                android:textSize="16sp"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textSize="16sp" />
 
             <Button
                 android:id="@+id/btnSubmit"
@@ -129,6 +130,5 @@
                 android:textColor="@color/black" />
 
         </RelativeLayout>
-
     </ScrollView>
 </RelativeLayout>

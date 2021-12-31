@@ -59,86 +59,90 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="225dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tILTitle"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="225dp"
-            android:layout_marginEnd="30dp"
-            app:hintEnabled="false">
+            android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/edtTitle"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tILTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_edittext01"
-                android:drawableStart="@drawable/ic_pdf_gray"
-                android:drawablePadding="10dp"
-                android:hint="Tiêu đề sách"
-                android:inputType="textPersonName|textCapWords"
-                android:padding="10dp"
-                android:textColor="@color/black"
-                android:textColorHint="#B8B8B8"
-                android:textSize="16sp" />
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                app:hintEnabled="false">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <EditText
+                    android:id="@+id/edtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edittext01"
+                    android:drawableStart="@drawable/ic_pdf_gray"
+                    android:drawablePadding="10dp"
+                    android:hint="Tiêu đề sách"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B8B8B8"
+                    android:textSize="16sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tILTitleDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tILTitle"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            app:hintEnabled="false">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/edtDescription"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tILTitleDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tILTitle"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                app:hintEnabled="false">
+
+                <EditText
+                    android:id="@+id/edtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_edittext01"
+                    android:drawableStart="@drawable/ic_pdf_gray"
+                    android:drawablePadding="10dp"
+                    android:hint="Mô tả"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#B8B8B8"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--    Chọn loại sách-->
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tILTitleDescription"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/shape_edittext01"
-                android:drawableStart="@drawable/ic_pdf_gray"
+                android:drawableStart="@drawable/ic_category_gray"
+                android:drawableEnd="@drawable/ic_down_gray"
                 android:drawablePadding="10dp"
-                android:hint="Mô tả"
-                android:inputType="textMultiLine|textCapSentences"
+                android:gravity="center_vertical"
+                android:hint="Loại sách"
                 android:padding="10dp"
-                android:textColor="@color/black"
-                android:textColorHint="#B8B8B8"
                 android:textSize="16sp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!--    Chọn loại sách-->
-        <TextView
-            android:id="@+id/tvCategory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tILTitleDescription"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/shape_edittext01"
-            android:drawableStart="@drawable/ic_category_gray"
-            android:drawableEnd="@drawable/ic_down_gray"
-            android:drawablePadding="10dp"
-            android:gravity="center_vertical"
-            android:hint="Loại sách"
-            android:padding="10dp"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvCategory"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:background="@drawable/shape_button1"
-            android:text="Upload"
-            android:textColor="@color/black" />
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvCategory"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/shape_button1"
+                android:text="Upload"
+                android:textColor="@color/black" />
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>
