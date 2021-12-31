@@ -131,7 +131,7 @@ class DetailPdfActivity : AppCompatActivity() {
         ref.child(bookId)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    var downloadsCount = "${snapshot.child("downloadsCount").value}"
+                    var downloadsCount = "${snapshot.child("dowloadsCount").value}"
 
                     if (downloadsCount == "" || downloadsCount == "null") {
                         downloadsCount = "0"
