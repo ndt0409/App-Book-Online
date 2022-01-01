@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/drawable/bg_tab_selected.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/drawable/bg_tab_unselected.xml" value="0.1359375" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/drawable/shape_rect01.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/drawable/tab_selector.xml" value="0.2203125" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_add_pdf.xml" value="0.14" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_dashbroad_admin.xml" value="0.20416666666666666" />
@@ -12,7 +13,11 @@
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_detail_pdf.xml" value="0.25" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_edit_pdf.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_list_pdfadmin.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_login.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_main.xml" value="0.19202898550724637" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_profile_edit.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/activity_view_pdf.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/fragment_books_user.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Admin/AndroidStudioProjects/App-Book-Online/app/src/main/res/layout/item_pdf_admin.xml" value="0.20416666666666666" />

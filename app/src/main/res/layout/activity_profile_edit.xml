@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back01"
+    tools:context=".activities.ProfileEditActivity">
+
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Sửa thông tin cá nhân"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_below="@+id/tvTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_person"
+            app:shapeAppearanceOverlay="@style/styleRoundedCornersImage" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginEnd="30dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/titleName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_edittext01"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="10dp"
+                android:hint="Name"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#707070" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleName"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_button1"
+            android:text="Update"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+</RelativeLayout>

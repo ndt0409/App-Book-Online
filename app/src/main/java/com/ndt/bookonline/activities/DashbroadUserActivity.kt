@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -45,6 +46,10 @@ class DashbroadUserActivity : AppCompatActivity() {
             firebaseAuth.signOut()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+        }
+
+        binding.btnProfile.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
         }
     }
 
@@ -147,15 +152,24 @@ class DashbroadUserActivity : AppCompatActivity() {
         }
     }
 
+    //activity này được mở khi đn hoặc chưa đn => hãy ẩn btnlogout và btnProfile khi người dùng không đăng nhập
     private fun checkUser() {
         // get user current
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser == null) {
             binding.tvSubTitle.text = "Chưa đăng nhập"
+
+            //ẩn profile, logout
+            binding.btnProfile.visibility = View.GONE
+            binding.btnLogout.visibility = View.GONE
         } else {
             val email = firebaseUser.email
             //set to tv of toolbar
             binding.tvSubTitle.text = email
+
+            //ẩn profile, logout
+            binding.btnProfile.visibility = View.VISIBLE
+            binding.btnLogout.visibility = View.VISIBLE
         }
     }
 }
