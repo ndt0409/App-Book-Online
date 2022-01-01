@@ -10,7 +10,10 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.ndt.bookonline.*
+import com.ndt.bookonline.activities.DetailPdfActivity
+import com.ndt.bookonline.activities.EditPdfActivity
 import com.ndt.bookonline.databinding.ItemPdfAdminBinding
+import com.ndt.bookonline.filters.FilterPdfAdmin
 import com.ndt.bookonline.model.PDF
 
 class PDFAdminAdapter : RecyclerView.Adapter<PDFAdminAdapter.HolderPdfAdmin>, Filterable {

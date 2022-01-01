@@ -1,16 +1,14 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.activities
 
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.ndt.bookonline.databinding.ActivityRegisterBinding
-import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding

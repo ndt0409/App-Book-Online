@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.ndt.bookonline.DetailPdfActivity
-import com.ndt.bookonline.FilterPdfAdmin
-import com.ndt.bookonline.FilterPdfUser
+import com.ndt.bookonline.activities.DetailPdfActivity
+import com.ndt.bookonline.filters.FilterPdfUser
 import com.ndt.bookonline.MyApplication
 import com.ndt.bookonline.databinding.ItemPdfUserBinding
 import com.ndt.bookonline.model.PDF

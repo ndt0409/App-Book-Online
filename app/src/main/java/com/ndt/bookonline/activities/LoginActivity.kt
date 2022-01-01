@@ -1,4 +1,4 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.activities
 
 import android.app.ProgressDialog
 import android.content.Intent
@@ -12,8 +12,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.ndt.bookonline.databinding.ActivityLoginBinding
-import com.ndt.bookonline.databinding.ActivityRegisterBinding
-import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding

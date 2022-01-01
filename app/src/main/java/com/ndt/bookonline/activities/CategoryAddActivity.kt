@@ -1,4 +1,4 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.activities
 
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity

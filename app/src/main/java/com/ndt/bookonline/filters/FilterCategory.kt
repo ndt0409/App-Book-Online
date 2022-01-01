@@ -1,7 +1,6 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.filters
 
 import android.widget.Filter
-import android.widget.Filterable
 import com.ndt.bookonline.adapter.CategoryAdapter
 import com.ndt.bookonline.model.Category
 

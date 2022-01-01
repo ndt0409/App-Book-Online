@@ -1,4 +1,4 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

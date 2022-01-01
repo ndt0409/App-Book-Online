@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".DetailPdfActivity">
+    tools:context=".activities.DetailPdfActivity">
 
     <RelativeLayout
         android:id="@+id/rlToolbar"
@@ -90,7 +90,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text="Category" />
+                            android:text="Thể loại: " />
 
                         <TextView
                             android:id="@+id/tvCategory"
@@ -112,7 +112,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text="Date" />
+                            android:text="Ngày ra: " />
 
                         <TextView
                             android:id="@+id/tvDate"
@@ -133,7 +133,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text="Size" />
+                            android:text="Kích thước: " />
 
                         <TextView
                             android:id="@+id/tvSize"
@@ -154,7 +154,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text="Views" />
+                            android:text="Lượt xem: " />
 
                         <TextView
                             android:id="@+id/tvView"
@@ -175,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text="Dowload" />
+                            android:text="Lượt tải về: " />
 
                         <TextView
                             android:id="@+id/tvDowload"
@@ -196,7 +196,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
-                            android:text="Pages" />
+                            android:text="Số trang: " />
 
                         <TextView
                             android:id="@+id/tvPages"
@@ -236,8 +236,9 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/ic_read_book"
-            android:text="Read"
-            android:textColor="@color/white" />
+            android:text="Đọc sách"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
 
         <Button
             android:id="@+id/btnDowloadBook"
@@ -246,8 +247,20 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:drawableTop="@drawable/ic_dowload"
-            android:text="Dowload"
-            android:textColor="@color/white" />
+            android:text="Tải xuống"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btnFavorite"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableTop="@drawable/ic_favorite_border"
+            android:text="Thêm vào mục yêu thích"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
 
     </LinearLayout>
 </RelativeLayout>

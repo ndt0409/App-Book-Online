@@ -14,40 +14,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BookOnline">
         <activity
-            android:name=".ViewPdfActivity"
+            android:name=".activities.ViewPdfActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailPdfActivity"
+            android:name=".activities.DetailPdfActivity"
             android:exported="false" />
         <activity
-            android:name=".EditPdfActivity"
+            android:name=".activities.EditPdfActivity"
             android:exported="false" />
         <activity
-            android:name=".ListPDFAdmin"
+            android:name=".activities.ListPDFAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".AddPdfActivity"
+            android:name=".activities.AddPdfActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoryAddActivity"
+            android:name=".activities.CategoryAddActivity"
             android:exported="false" />
         <activity
-            android:name=".DashbroadAdminActivity"
+            android:name=".activities.DashbroadAdminActivity"
             android:exported="false" />
         <activity
-            android:name=".DashbroadUserActivity"
+            android:name=".activities.DashbroadUserActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SpashActivity"
+            android:name=".activities.SpashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

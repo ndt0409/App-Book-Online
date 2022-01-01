@@ -9,9 +9,8 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.FirebaseDatabase
-import com.ndt.bookonline.AddPdfActivity
-import com.ndt.bookonline.FilterCategory
-import com.ndt.bookonline.ListPDFAdmin
+import com.ndt.bookonline.filters.FilterCategory
+import com.ndt.bookonline.activities.ListPDFAdminActivity
 import com.ndt.bookonline.databinding.ItemCategoryBinding
 import com.ndt.bookonline.model.Category
 
@@ -61,7 +60,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.HolderCategory>, Fi
                 .show()
         }
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, ListPDFAdmin::class.java)
+            val intent = Intent(context, ListPDFAdminActivity::class.java)
             intent.putExtra("categoryId", id)
             intent.putExtra("category", category)
             context.startActivity(intent)

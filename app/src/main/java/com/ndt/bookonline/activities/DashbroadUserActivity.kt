@@ -1,4 +1,4 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.activities
 
 import android.app.ProgressDialog
 import android.content.Context
@@ -14,9 +14,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.ndt.bookonline.BooksUserFragment
 import com.ndt.bookonline.databinding.ActivityDashbroadUserBinding
 import com.ndt.bookonline.model.Category
-import java.util.*
 import kotlin.collections.ArrayList
 
 class DashbroadUserActivity : AppCompatActivity() {
@@ -80,12 +80,16 @@ class DashbroadUserActivity : AppCompatActivity() {
                 )
                 viewPagerAdapter.addFragment(
                     BooksUserFragment.newInstance(
-                        "${modelMostViewer.id}", "${modelMostViewer.category}", "${modelMostViewer.uid}"
+                        "${modelMostViewer.id}",
+                        "${modelMostViewer.category}",
+                        "${modelMostViewer.uid}"
                     ), modelMostViewer.category
                 )
                 viewPagerAdapter.addFragment(
                     BooksUserFragment.newInstance(
-                        "${modelMostDownload.id}", "${modelMostDownload.category}", "${modelMostDownload.uid}"
+                        "${modelMostDownload.id}",
+                        "${modelMostDownload.category}",
+                        "${modelMostDownload.uid}"
                     ), modelMostDownload.category
                 )
                 viewPagerAdapter.notifyDataSetChanged()

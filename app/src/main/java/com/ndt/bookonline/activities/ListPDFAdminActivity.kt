@@ -1,4 +1,4 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,12 +8,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.ktx.Firebase
 import com.ndt.bookonline.adapter.PDFAdminAdapter
 import com.ndt.bookonline.databinding.ActivityListPdfadminBinding
 import com.ndt.bookonline.model.PDF
 
-class ListPDFAdmin : AppCompatActivity() {
+class ListPDFAdminActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListPdfadminBinding
 
@@ -79,7 +78,7 @@ class ListPDFAdmin : AppCompatActivity() {
                             pdfArrayList.add(model)
                         }
                     }
-                    pdfAdminAdapter = PDFAdminAdapter(this@ListPDFAdmin, pdfArrayList)
+                    pdfAdminAdapter = PDFAdminAdapter(this@ListPDFAdminActivity, pdfArrayList)
                     binding.rvBooks.adapter = pdfAdminAdapter
                 }
 

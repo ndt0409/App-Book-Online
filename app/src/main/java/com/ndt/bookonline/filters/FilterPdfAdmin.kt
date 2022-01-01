@@ -1,18 +1,18 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.filters
 
 import android.widget.Filter
 import com.ndt.bookonline.adapter.PDFAdminAdapter
-import com.ndt.bookonline.adapter.PDFUserAdapter
 import com.ndt.bookonline.model.PDF
 
-class FilterPdfUser:Filter {
+class FilterPdfAdmin : Filter {
+
     var filterList: ArrayList<PDF>
 
-    var adapterPdfUser: PDFUserAdapter
+    var adapterPdfAdmin: PDFAdminAdapter
 
-    constructor(filterList: ArrayList<PDF>, adapterPdfUser: PDFUserAdapter) : super() {
+    constructor(filterList: ArrayList<PDF>, adapterPdfAdmin: PDFAdminAdapter) {
         this.filterList = filterList
-        this.adapterPdfUser = adapterPdfUser
+        this.adapterPdfAdmin = adapterPdfAdmin
     }
 
     override fun performFiltering(constraint: CharSequence?): FilterResults {
@@ -42,8 +42,8 @@ class FilterPdfUser:Filter {
 
     override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
         //lọc
-        adapterPdfUser.pdfArrayList = results!!.values as ArrayList<PDF>
+        adapterPdfAdmin.pdfArrayList = results!!.values as ArrayList<PDF>
 
-        adapterPdfUser.notifyDataSetChanged()
+        adapterPdfAdmin.notifyDataSetChanged()
     }
 }

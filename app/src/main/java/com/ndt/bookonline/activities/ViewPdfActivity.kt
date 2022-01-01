@@ -1,4 +1,4 @@
-package com.ndt.bookonline
+package com.ndt.bookonline.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,9 +8,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import com.ndt.bookonline.databinding.ActivityDetailPdfBinding
+import com.ndt.bookonline.Constants
 import com.ndt.bookonline.databinding.ActivityViewPdfBinding
 
 class ViewPdfActivity : AppCompatActivity() {
