@@ -9,5 +9,6 @@ data class PDF(
     var url: String = "",
     var timestamp: Long = 0,
     var viewCount: Long = 0,
-    var dowloadsCount: Long = 0
+    var dowloadsCount: Long = 0,
+    var isFavorite: Boolean = false
 )

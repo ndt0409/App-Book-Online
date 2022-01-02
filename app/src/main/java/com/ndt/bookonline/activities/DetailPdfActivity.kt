@@ -94,7 +94,7 @@ class DetailPdfActivity : AppCompatActivity() {
             } else {
                 //user đã đn
                 if (isInMyFavorite) {
-                    removeFromFavorite()
+                    MyApplication.removeFromFavorite(this, bookId)
                 } else {
                     addToFavorite()
                 }
@@ -253,7 +253,7 @@ class DetailPdfActivity : AppCompatActivity() {
                     } else {
                         binding.btnFavorite.setCompoundDrawablesRelativeWithIntrinsicBounds(
                             0,
-                            R.drawable.ic_favorite,
+                            R.drawable.ic_favorite_border,
                             0,
                             0
                         )
@@ -285,18 +285,5 @@ class DetailPdfActivity : AppCompatActivity() {
             .addOnFailureListener {
                 Toast.makeText(this, "Thất bại", Toast.LENGTH_SHORT).show()
             }
-    }
-
-    private fun removeFromFavorite() {
-        val ref = FirebaseDatabase.getInstance().getReference("Users")
-        ref.child(firebaseAuth.uid!!).child("Favorites").child(bookId)
-            .removeValue()
-            .addOnSuccessListener {
-                Toast.makeText(this, "Đã xóa khỏi danh sách yêu thích", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "Thất bại", Toast.LENGTH_SHORT).show()
-            }
-
     }
 }
