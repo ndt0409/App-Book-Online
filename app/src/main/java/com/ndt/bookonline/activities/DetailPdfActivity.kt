@@ -1,5 +1,6 @@
 package com.ndt.bookonline.activities
 
+import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
@@ -19,7 +21,10 @@ import com.google.firebase.storage.FirebaseStorage
 import com.ndt.bookonline.Constants
 import com.ndt.bookonline.MyApplication
 import com.ndt.bookonline.R
+import com.ndt.bookonline.adapter.AdapterComment
 import com.ndt.bookonline.databinding.ActivityDetailPdfBinding
+import com.ndt.bookonline.databinding.DialogCommentAddBinding
+import com.ndt.bookonline.model.Comment
 import java.io.FileOutputStream
 
 class DetailPdfActivity : AppCompatActivity() {
@@ -38,6 +43,10 @@ class DetailPdfActivity : AppCompatActivity() {
 
     private lateinit var progressDialog: ProgressDialog
     private lateinit var firebaseAuth: FirebaseAuth
+
+    private lateinit var commentArrayList: ArrayList<Comment>
+
+    private lateinit var adapterComment: AdapterComment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityDetailPdfBinding.inflate(layoutInflater)
@@ -60,6 +69,7 @@ class DetailPdfActivity : AppCompatActivity() {
         MyApplication.incrementBookViewCount(bookId)
 
         loadBookDetail()
+        showComments()
 
         binding.btnBack.setOnClickListener {
             onBackPressed()
@@ -98,9 +108,102 @@ class DetailPdfActivity : AppCompatActivity() {
                 } else {
                     addToFavorite()
                 }
-
             }
         }
+        binding.btnAddComment.setOnClickListener {
+            if (firebaseAuth.currentUser == null) {
+                Toast.makeText(
+                    this,
+                    "Bạn chưa đăng nhập, vui lòng đăng nhập để có thể dùng chức năng này",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                addCommentDialog()
+            }
+        }
+    }
+
+    private fun showComments() {
+        commentArrayList = ArrayList()
+
+        val ref = FirebaseDatabase.getInstance().getReference("Books")
+        ref.child(bookId).child("Comments")
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    commentArrayList.clear()
+                    for (ds in snapshot.children) {
+                        val model = ds.getValue(Comment::class.java)
+                        commentArrayList.add(model!!)
+                    }
+                    adapterComment = AdapterComment(this@DetailPdfActivity, commentArrayList)
+
+                    binding.rvComment.adapter = adapterComment
+                }
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+            })
+    }
+
+    private var comment = ""
+    private fun addCommentDialog() {
+        val commentAddBinding = DialogCommentAddBinding.inflate(LayoutInflater.from(this))
+
+        val builder = AlertDialog.Builder(this, R.style.CustomDialog)
+        builder.setView(commentAddBinding.root)
+
+        //tạo và show thông báo
+        val alertDialog = builder.create()
+        alertDialog.show()
+
+        //click quay lại, tắt dialog
+        commentAddBinding.btnBack.setOnClickListener {
+            alertDialog.dismiss()
+        }
+        commentAddBinding.btnSubmit.setOnClickListener {
+            comment = commentAddBinding.edtComment.text.toString().trim()
+            if (comment.isEmpty()) {
+                Toast.makeText(
+                    this,
+                    "Bạn chưa nêu cảm nghĩ",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                alertDialog.dismiss()
+                addComment()
+            }
+        }
+    }
+
+    private fun addComment() {
+        progressDialog.setMessage("Đang tải bình luận lên")
+        progressDialog.show()
+
+        val timestamp = "${System.currentTimeMillis()}"
+
+        val hashMap = HashMap<String, Any>()
+        hashMap["id"] = "$timestamp"
+        hashMap["bookId"] = "$bookId"
+        hashMap["timestamp"] = "$timestamp"
+        hashMap["comment"] = "$comment"
+        hashMap["uid"] = "${firebaseAuth.uid}"
+
+        //books > bookId > Comments > commentId > commentData
+        val ref = FirebaseDatabase.getInstance().getReference("Books")
+        ref.child(bookId).child("Comments").child(timestamp)
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(this, "Vừa thêm 1 bình luận", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                progressDialog.dismiss()
+                Toast.makeText(
+                    this,
+                    "Thêm bình luận thất bại",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
     }
 
     private val requestStorePermissonLaucher =
